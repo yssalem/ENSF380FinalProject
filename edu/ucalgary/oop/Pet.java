@@ -1,3 +1,3 @@
-public class Pet {
+public abstract class Pet {
     
 }
