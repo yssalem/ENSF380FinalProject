@@ -9,5 +9,10 @@ public class Veterinarian extends Employee{
         super(userStaffId, userName);
         this.specialization = userSpecialization;
     }
-    
+    public String getSpecialization() {
+        return specialization;
+    }
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
 }

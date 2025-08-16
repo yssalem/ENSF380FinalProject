@@ -1,0 +1,39 @@
+package edu.ucalgary.oop;
+
+import java.time.LocalDateTime;
+
+import edu.ucalgary.oop.Veterinarian;
+
+public class Appointment {
+
+    private LocalDateTime date;
+    private Veterinarian vet;
+    private Pet pet;
+    private String notes;
+    
+    public LocalDateTime getDate() {
+        return date;
+    }
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
+    public Veterinarian getVet() {
+        return vet;
+    }
+    public void setVet(Veterinarian vet) {
+        this.vet = vet;
+    }
+    public Pet getPet() {
+        return pet;
+    }
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
+    public String getNotes() {
+        return notes;
+    }
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+}
