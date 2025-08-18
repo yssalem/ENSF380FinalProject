@@ -53,6 +53,10 @@ public class Owner {
     }
 
     public void displayPets() {
-        pets.forEach( n -> System.out.println(n) );
+        pets.forEach( n -> System.out.println((pets.indexOf(n) + 1) + ". " + n) );
+    }
+
+    public Pet getPet(int index) {
+        return pets.get(index);
     }
 }
