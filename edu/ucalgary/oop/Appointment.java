@@ -2,15 +2,13 @@ package edu.ucalgary.oop;
 
 import java.time.LocalDateTime;
 
-import edu.ucalgary.oop.Veterinarian;
-
 public class Appointment {
 
     private LocalDateTime date;
     private Veterinarian vet;
     private Pet pet;
     private String notes;
-    
+
     public LocalDateTime getDate() {
         return date;
     }
