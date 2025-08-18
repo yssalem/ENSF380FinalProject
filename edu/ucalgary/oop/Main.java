@@ -9,7 +9,7 @@ public class Main {
         System.out.println("1: Add Data");
         System.out.println("2: View Data");
         Scanner scanner = new Scanner(System.in);
-        int choice;
+        int choice = 0;
         try{
             choice = scanner.nextInt();
             if(choice < 1 || choice > 2){
@@ -25,7 +25,15 @@ public class Main {
         finally{
             scanner.close();
         }
-        
+        switch(choice){
+            case 1:
+            System.out.println("Choose which data to add");
+
+            break;
+            case 2:
+            System.out.println("choose from options below");
+            break;
+        }
     }
 
 }
