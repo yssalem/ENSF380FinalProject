@@ -1,0 +1,31 @@
+package edu.ucalgary.oop;
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+
+public class Main {
+    public static void main(String[] args) throws InvalidInputException{
+        System.out.println("Select from menu options");
+        System.out.println("1: Add Data");
+        System.out.println("2: View Data");
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+        try{
+            choice = scanner.nextInt();
+            if(choice < 1 || choice > 2){
+                throw new InvalidInputException("Invalid input. Please enter an integer from 1 to 2");
+            }
+        }
+        catch(InvalidInputException e){
+        }
+        catch(InputMismatchException e){
+            System.out.println("Invalid input. Please enter an integer from 1 to 2");
+            scanner.nextLine();
+        }
+        finally{
+            scanner.close();
+        }
+        
+    }
+
+}
