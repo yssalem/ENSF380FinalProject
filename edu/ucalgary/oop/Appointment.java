@@ -9,6 +9,13 @@ public class Appointment {
     private Pet pet;
     private String notes;
 
+    public Appointment(LocalDateTime date, Veterinarian vet, Pet pet, String notes){
+        this.date = date;
+        this.vet = vet;
+        this.pet = pet;
+        this.notes = notes;
+    }
+
     public LocalDateTime getDate() {
         return date;
     }
