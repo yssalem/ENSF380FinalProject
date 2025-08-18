@@ -36,4 +36,12 @@ public class Owner {
     public static int getOwnerCount() {
         return ownerCount;
     }
+
+    public void addDog(String name, int age, boolean isVaccinated) {
+        pets.add(new Dog(name, age, isVaccinated));
+    }
+
+    public void addCat(String name, int age, boolean isInside) {
+        pets.add(new Cat(name, age, isInside));
+    }
 }
