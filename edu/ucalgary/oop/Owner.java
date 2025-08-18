@@ -9,6 +9,13 @@ public class Owner {
     private ArrayList<Pet> pets;
     private static int ownerCount = 0;
 
+    public Owner(String name, String email, String phoneNumber) {
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        ownerCount++;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -35,5 +42,17 @@ public class Owner {
 
     public static int getOwnerCount() {
         return ownerCount;
+    }
+
+    public void addDog(String name, int age, boolean isVaccinated) {
+        pets.add(new Dog(name, age, isVaccinated, this));
+    }
+
+    public void addCat(String name, int age, boolean isInside) {
+        pets.add(new Cat(name, age, isInside, this));
+    }
+
+    public void displayPets() {
+        pets.forEach( n -> System.out.println(n) );
     }
 }

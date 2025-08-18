@@ -21,4 +21,12 @@ public abstract class Pet {
         return this.age;
     }
 
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
 }
