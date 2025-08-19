@@ -1,5 +1,12 @@
+/**
+@author 	Youssef Salem
+*/
+
 package edu.ucalgary.oop;
 
+/**
+Dog class stores information about the dog and extends Pet class functionality.
+*/
 public class Dog extends Pet {
     private boolean isVaccinated;
 
