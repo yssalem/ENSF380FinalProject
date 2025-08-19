@@ -110,12 +110,39 @@ private static void showAddMenu(Scanner scanner){
         int choice = getValidatedInt(scanner, 1, 6);
 
         switch (choice) {
+<<<<<<< HEAD
             case 1: cats.forEach(System.out::println);
             case 2: dogs.forEach(System.out::println);
             case 3: owners.forEach(System.out::println);
             case 4: receptionists.forEach(System.out::println);
             case 5: vets.forEach(System.out::println);
             case 6: appointments.forEach(System.out::println);
+=======
+            case 1: {
+                viewCats(scanner);
+                break;
+            }
+            case 2: {
+                viewDogs(scanner);
+                break;
+            }
+            case 3: {
+                viewOwners(scanner);
+                break;
+            }
+            case 4: {
+                viewReceptionists(scanner);
+                break;
+            }
+            case 5: {
+                viewVets(scanner);
+                break;
+            }
+            case 6: {
+                appointments.forEach(System.out::println);
+                break;
+            }
+>>>>>>> 5752d1a9cb8153e799dd69e1ead5f83cdaf38776
         }
     }
 
