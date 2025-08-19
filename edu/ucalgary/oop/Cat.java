@@ -1,5 +1,12 @@
+/**
+@author 	Youssef Salem
+*/
+
 package edu.ucalgary.oop;
 
+/**
+Cat class stores information about the cat and extends Pet class functionality.
+*/
 public class Cat extends Pet {
     private boolean isInside;
 

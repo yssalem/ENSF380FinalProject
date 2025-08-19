@@ -1,5 +1,12 @@
+/**
+@author 	Youssef Salem
+*/
+
 package edu.ucalgary.oop;
 
+/**
+Pet class stores information about the pet.
+*/
 public abstract class Pet {
     private String name;
     private int age;
