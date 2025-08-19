@@ -14,6 +14,9 @@ public class Main {
     private static ArrayList<Owner> owners = new ArrayList<>();
     private static ArrayList<Receptionist> receptionists = new ArrayList<>();
     private static ArrayList<Appointment> appointments = new ArrayList<>();
+
+    owners.add(new Owner("Alice Johnson", "555-1234", "alice.johnson@email.com"));
+
     public static void main(String[] args) throws InvalidInputException{
         System.out.println("Select from menu options");
         System.out.println("1: Add Data");
