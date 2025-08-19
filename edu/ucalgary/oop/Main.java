@@ -192,7 +192,7 @@ private static void addCat(Scanner scanner) throws InputNotFoundException {
         String dateString = scanner.nextLine();
         LocalDateTime date = null;
         try {
-            LocalDateTime localDateTime = LocalDateTime.parse(dateString, formatter);
+            date = LocalDateTime.parse(dateString, formatter);
         } catch (java.time.format.DateTimeParseException e) {
             System.err.println("Error: Invalid date-time format. Please ensure it matches 'yyyy-MM-dd HH:mm:ss'.");
         } 
