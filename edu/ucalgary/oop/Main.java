@@ -28,10 +28,15 @@ public class Main {
         switch(choice){
             case 1:
             System.out.println("Choose which data to add");
-
+            System.out.println("1: new cat");
+            System.out.println("2: new dog");
+            System.out.println("3: new owner");
+            System.out.println("4: new receptionist");
+            System.out.println("5: new veterinarian");
+            System.out.println("6: new appointment");
             break;
             case 2:
-            System.out.println("choose from options below");
+            System.out.println("Choose which data to view");
             break;
         }
     }
