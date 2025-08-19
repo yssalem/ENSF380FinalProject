@@ -58,9 +58,20 @@ private static void showAddMenu(Scanner scanner){
             }
             break;
 
-            case 3: addOwner(scanner);
-            case 4: addReceptionist(scanner);
-            case 5: addVeterinarian(scanner);
+            case 3: 
+            {
+                addOwner(scanner);
+                break;
+            }
+            case 4: 
+            {
+                addReceptionist(scanner);
+                break;
+            }
+            case 5: {
+                addVeterinarian(scanner);
+                break;
+            }
             case 6: 
             try{
                 addAppointment(scanner);
