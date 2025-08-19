@@ -18,10 +18,18 @@ public class Main {
 
 
     public static void main(String[] args) throws InvalidInputException{
-        owners.add(new Owner("Alice Johnson", "555-1234", "alice.johnson@email.com"));
-        owners.add(new Owner("Alice Johnson", "555-1234", "alice.johnson@email.com"));
 
+        // Initialization data from database
         
+        owners.add(new Owner("Alice Johnson", "alice.johnson@email.com", "555-1234"));
+        owners.add(new Owner("Robert Davis", "robert.davis@email.com", "555-5678"));
+        owners.add(new Owner("Laura Smith", "laura.smith@email.com", "555-8765"));
+
+        owners.get(0).addDog("Buddy", 3, true);
+        owners.get(0).addCat("Whiskers", 4, false);
+        owners.get(1).addCat("Mittens", 2, true);
+        owners.get(2).addDog("Charlie", 5, false);
+
         System.out.println("Select from menu options");
         System.out.println("1: Add Data");
         System.out.println("2: View Data");
