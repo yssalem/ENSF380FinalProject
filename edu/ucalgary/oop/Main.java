@@ -26,7 +26,7 @@ public class Main {
             break;
         }
     }
-private static void showAddMenu(Scanner scanner){
+private static void showAddMenu(Scanner scanner) throws OwnerNotFoundException{
     System.out.println("Choose which data to add");
     System.out.println("1: cat");
     System.out.println("2: dog");
@@ -37,17 +37,32 @@ private static void showAddMenu(Scanner scanner){
     int choice = getValidatedInt(scanner, 1, 6);
 
     switch (choice) {
-            case 1 -> addCat(scanner);
-            case 2 -> addDog(scanner);
-            case 3 -> addOwner(scanner);
-            case 4 -> addReceptionist(scanner);
-            case 5 -> addVeterinarian(scanner);
-            case 6 -> addAppointment(scanner);
+            case 1:
+            try {
+                addCat(scanner);
+            } 
+            catch (OwnerNotFoundException e) {
+                System.out.println(e.getMessage());
+            }
+            break;
+            
+            case 2:
+            try {
+                addDog(scanner);
+            } 
+            catch (OwnerNotFoundException e) {
+                System.out.println(e.getMessage());
+            }
+            break;
+            case 3: addOwner(scanner);
+            case 4: addReceptionist(scanner);
+            case 5: addVeterinarian(scanner);
+            case 6: addAppointment(scanner);
         }
 }
 
  private static void showViewMenu(Scanner scanner) {
-        System.out.println("Which data would you like to view?");
+        System.out.println("Choose which data to view");
         System.out.println("1: Cats");
         System.out.println("2: Dogs");
         System.out.println("3: Owners");
@@ -77,8 +92,18 @@ private static void addCat(Scanner scanner) {
         System.out.print("Is the cat an indoor cat? (true/false): ");
         boolean isInside = scanner.nextBoolean();
 
-        // In a real system you’d select an Owner from owners list
+        System.out.print("Enter owner phone number (format should be XXX-XXXX)");
+        String phoneNumber = scanner.next();
         Owner owner = null;
+        for(Owner owner2 : owners){
+            if(owner2.getPhoneNumber().equals(phoneNumber)){
+                owner = owner2;
+            }
+        }
+
+        if (owner == null) {
+            throw new OwnerNotFoundException("No owner found with phone number: " + phoneNumber);
+        }
 
         cats.add(new Cat(name, age, isInside, owner));
         System.out.println("Cat added successfully!");
@@ -91,7 +116,18 @@ private static void addCat(Scanner scanner) {
         System.out.print("Enter dog age: ");
         int age = scanner.nextInt();
 
-        Owner owner = null; // could select from list
+        System.out.print("Enter owner phone number (format should be XXX-XXXX)");
+        String phoneNumber = scanner.next();
+        Owner owner = null; 
+        for(Owner owner2 : owners){
+            if(owner2.getPhoneNumber().equals(phoneNumber)){
+                owner = owner2;
+            }
+        }
+
+        if (owner == null) {
+            throw new OwnerNotFoundException("No owner found with phone number: " + phoneNumber);
+        }
 
         dogs.add(new Dog(name, age, owner));
         System.out.println("Dog added successfully!");
@@ -101,7 +137,7 @@ private static void addCat(Scanner scanner) {
         System.out.print("Enter owner name: ");
         String name = scanner.next();
 
-        System.out.print("Enter phone number: ");
+        System.out.print("Enter phone number(format should be XXX-XXXX): ");
         String phone = scanner.next();
 
         owners.add(new Owner(name, phone));
