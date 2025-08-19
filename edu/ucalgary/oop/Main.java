@@ -35,6 +35,7 @@ public class Main {
             showViewMenu(scanner);
             break;
         }
+        scanner.close();
     }
 private static void showAddMenu(Scanner scanner){
     System.out.println("Choose which data to add");
@@ -102,7 +103,7 @@ private static void showAddMenu(Scanner scanner){
         int choice = getValidatedInt(scanner, 1, 6);
 
         switch (choice) {
-            case 1: cats.forEach(System.out::println);
+            case 1: viewCats(scanner);
             case 2: dogs.forEach(System.out::println);
             case 3: owners.forEach(System.out::println);
             case 4: receptionists.forEach(System.out::println);
@@ -263,6 +264,14 @@ private static void addCat(Scanner scanner) throws InputNotFoundException {
         System.out.println("Appointment added successfully!");
     }
 
+    private static void viewCats(Scanner scanner){
+        for(Cat cat :cats){
+            System.out.print("Name: ");
+            System.out.println(cat.getName());
+            System.out.print("Age: ");
+            System.out.println(cat.getAge());
+        }
+    }
 private static int getValidatedInt(Scanner scanner, int min, int max) {
         int value = -1;
         boolean valid = false;
