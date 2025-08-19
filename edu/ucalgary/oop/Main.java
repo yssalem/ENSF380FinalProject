@@ -38,6 +38,7 @@ public class Main {
             showViewMenu(scanner);
             break;
         }
+        scanner.close();
     }
 private static void showAddMenu(Scanner scanner){
     System.out.println("Choose which data to add");
@@ -105,11 +106,11 @@ private static void showAddMenu(Scanner scanner){
         int choice = getValidatedInt(scanner, 1, 6);
 
         switch (choice) {
-            case 1: cats.forEach(System.out::println);
-            case 2: dogs.forEach(System.out::println);
-            case 3: owners.forEach(System.out::println);
-            case 4: receptionists.forEach(System.out::println);
-            case 5: vets.forEach(System.out::println);
+            case 1: viewCats(scanner);
+            case 2: viewDogs(scanner);
+            case 3: viewOwners(scanner);
+            case 4: viewReceptionists(scanner);
+            case 5: viewVets(scanner);
             case 6: appointments.forEach(System.out::println);
         }
     }
@@ -264,6 +265,44 @@ private static void addCat(Scanner scanner) throws InputNotFoundException {
         String notes = scanner.nextLine();        
         appointments.add(new Appointment(date, vet, pet, notes));
         System.out.println("Appointment added successfully!");
+    }
+
+    private static void viewCats(Scanner scanner){
+        for(Cat cat :cats){
+            System.out.print("Name: ");
+            System.out.println(cat.getName());
+            System.out.print("Age: ");
+            System.out.println(cat.getAge());
+        }
+    }
+    private static void viewDogs(Scanner scanner){
+        for(Dog dog :dogs){
+            System.out.print("Name: ");
+            System.out.println(dog.getName());
+            System.out.print("Age: ");
+            System.out.println(dog.getAge());
+        }
+    }
+
+    private static void viewOwners(Scanner scanner){
+        for(Owner owner :owners){
+            System.out.print("Name: ");
+            System.out.println(owner.getName());
+        }
+    }
+
+    private static void viewReceptionists(Scanner scanner){
+        for(Receptionist receptionist :receptionists){
+            System.out.print("Name: ");
+            System.out.println(receptionist.getName());
+        }
+    }
+
+    private static void viewVets(Scanner scanner){
+        for(Veterinarian vet :vets){
+            System.out.print("Name: ");
+            System.out.println(vet.getName());
+        }
     }
 
 private static int getValidatedInt(Scanner scanner, int min, int max) {
