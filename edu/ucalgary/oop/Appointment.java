@@ -1,9 +1,9 @@
 package edu.ucalgary.oop;
 
 import java.time.LocalDateTime;
-
+/**@author Noor */
 public class Appointment {
-
+/**This class is for handling appointments */
     private LocalDateTime date;
     private Veterinarian vet;
     private Pet pet;
