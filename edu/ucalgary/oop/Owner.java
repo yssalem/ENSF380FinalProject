@@ -16,6 +16,10 @@ public class Owner {
         ownerCount++;
     }
 
+    public Owner() {
+        ownerCount++;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
